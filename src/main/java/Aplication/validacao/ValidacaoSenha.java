@@ -39,7 +39,7 @@ public class ValidacaoSenha {
     }
 
     public static void cadastro(String login, String senha, boolean validacao){
-        if (validacao == true){
+        if (validacao == true || !login.isEmpty()){
             try{
                 Usuario usuario = new Usuario(0, login, senha);
                 DAO dao = new DAO();
