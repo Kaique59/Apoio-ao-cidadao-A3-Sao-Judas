@@ -16,7 +16,7 @@ public class Confirmacao {
                 "Deseja seguir com a exclusão?",
                 "ATENÇÃO!",
                 JOptionPane.YES_NO_OPTION, //Pop-up de sim ou não
-                JOptionPane.ERROR_MESSAGE, null,  //tipo de msg e icone
+                JOptionPane.WARNING_MESSAGE, null,  //tipo de msg e icone
                 options,  //Texto do botão
                 options[0]); //texto default
 
@@ -43,7 +43,7 @@ public class Confirmacao {
                 "Deseja seguir com a exclusão?",
                 "ATENÇÃO!",
                 JOptionPane.YES_NO_OPTION, //Pop-up de sim ou não
-                JOptionPane.ERROR_MESSAGE, null,  //tipo de msg e icone
+                JOptionPane.WARNING_MESSAGE, null,  //tipo de msg e icone
                 options,  //Texto do botão
                 options[0]); //texto default
 

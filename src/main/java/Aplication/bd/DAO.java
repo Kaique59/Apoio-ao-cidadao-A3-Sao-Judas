@@ -66,15 +66,24 @@ public class DAO {
     }
     
     public void atualizar(Cidadaos cidadaos) throws Exception{
-        String sql = "UPDATE tb_cidadaos SET nome = ?, telefone = ?, endereco = ? WHERE id = ?";
+        String sql = "UPDATE tb_cidadaos SET nome = ?, telefone = ? WHERE id = ?";
         try (Connection conn = ConexaoBD.obtemConexao();
                  PreparedStatement ps = conn.prepareStatement(sql)){
-            ps.setString(1, cidadaos.getNome());         
+            ps.setString(1, cidadaos.getNome());
             ps.setString(2, cidadaos.getTelefone());
-            ps.setString(3, cidadaos.getEndereco());
-            ps.setInt(4, cidadaos.getId());         
-            ps.execute(); 
+            ps.setInt(3, cidadaos.getId());
+            ps.execute();
                  }
+    }
+
+    public void atualizarEndereco(Cidadaos cidadaos) throws Exception{
+        String sql = "UPDATE tb_cidadaos SET endereco = ? WHERE id = ?";
+        try (Connection conn = ConexaoBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, cidadaos.getEndereco());
+            ps.setInt(2, cidadaos.getId());
+            ps.execute();
+        }
     }
     
     public void atualizarNecessidades(Cidadaos cidadaos) throws Exception{
@@ -84,7 +93,7 @@ public class DAO {
             ps.setString(1, cidadaos.getNecessidades());
             ps.setString(2, cidadaos.getStatus());
             ps.setInt(3, cidadaos.getId());         
-            ps.execute(); 
+            ps.execute();
                  }
     }
     

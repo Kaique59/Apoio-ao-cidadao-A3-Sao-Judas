@@ -3,7 +3,7 @@ package Aplication.telas;
 
 import Aplication.api.ApiCEP;
 import Aplication.dto.EnderecoDto;
-import Aplication.validacao.ValidacaoCadastro;
+import Aplication.validacao.ValidacaoInserir;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -272,8 +272,8 @@ public class InserirTela extends javax.swing.JFrame {
         String endereco = "CEP: " + txtCepInserir.getText() + "\nCidade: " + txtCidadeInserir.getText() + "\nUF: " + txtUFInserir.getText() + "\nEndereço: " + txtRuaInserir.getText() + ", " + txtNumInserir.getText() + ", " + txtBairroInserir.getText() + "\n" + txtComplementoInserir.getText();
         String necessidades = txtNecessidadesInserir.getText();
 
-        ValidacaoCadastro validacaoCadastro = new ValidacaoCadastro();
-        validacaoCadastro.validarCadastro(nome, cpf, telefone, endereco, necessidades);
+        ValidacaoInserir validacaoInserir = new ValidacaoInserir();
+        validacaoInserir.validarInserir(nome, cpf, telefone, endereco, necessidades);
     }//GEN-LAST:event_btnConfirmarInserirActionPerformed
 
     private void txtTelefoneInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneInserirActionPerformed

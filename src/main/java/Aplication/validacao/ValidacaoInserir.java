@@ -5,9 +5,9 @@ import Aplication.bd.DAO;
 
 import javax.swing.*;
 
-public class ValidacaoCadastro {
+public class ValidacaoInserir {
 
-    public static void validarCadastro(String nome, String cpf, String telefone, String endereco, String necessidades){
+    public static void validarInserir(String nome, String cpf, String telefone, String endereco, String necessidades){
         boolean vn;
         boolean vCpf;
         boolean vTel;

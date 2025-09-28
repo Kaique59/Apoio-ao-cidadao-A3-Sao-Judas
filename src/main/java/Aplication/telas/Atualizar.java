@@ -5,6 +5,7 @@
 
 package Aplication.telas;
 
+import Aplication.bd.ConexaoBD;
 import Aplication.classes.Cidadaos;
 import Aplication.api.ApiCEP;
 import Aplication.bd.DAO;
@@ -12,6 +13,10 @@ import Aplication.dto.EnderecoDto;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -59,6 +64,11 @@ public class Atualizar extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Atualizar Pessoa:"));
 
         txtIdAtualizar.setBorder(javax.swing.BorderFactory.createTitledBorder("Id:"));
+        txtIdAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdAtualizarActionPerformed(evt);
+            }
+        });
         txtIdAtualizar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtIdAtualizarKeyPressed(evt);
@@ -298,6 +308,7 @@ public class Atualizar extends javax.swing.JFrame {
             DAO dao = new DAO();
             dao.atualizar(cidadaos);
             dao.atualizarNecessidades(cidadaos);
+            if (!txtCepAtualizar.getText().isEmpty()){dao.atualizarEndereco(cidadaos);}
             JOptionPane.showMessageDialog(null, "Pessoa atualizada!");
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Não foi possivel atualizar.");
@@ -402,6 +413,35 @@ public class Atualizar extends javax.swing.JFrame {
     private void txtStatusAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStatusAtualizarActionPerformed
 
     }//GEN-LAST:event_txtStatusAtualizarActionPerformed
+
+    private void txtIdAtualizarActionPerformed(java.awt.event.ActionEvent evt) {
+        String sql = "SELECT * FROM tb_cidadaos WHERE id = ?";
+        try (Connection conn = ConexaoBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.setString(1, txtIdAtualizar.getText());
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                txtNomeAtualizar.setText(rs.getString(2));
+                txtTelefoneAtualizar.setText(rs.getString(4));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        String sql2 = "SELECT * FROM tb_necessidades WHERE id = ?";
+        try (Connection conn = ConexaoBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(sql2)){
+            ps.setString(1, txtIdAtualizar.getText());
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                txtNecessidadesAtualizar.setText(rs.getString(2));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }                                              
 
     /**
      * @param args the command line arguments
