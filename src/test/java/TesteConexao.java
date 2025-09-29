@@ -1,4 +1,4 @@
-import Aplication.bd.ConexaoBD;
+import Application.bd.ConexaoBD;
 
 import java.sql.Connection;
 

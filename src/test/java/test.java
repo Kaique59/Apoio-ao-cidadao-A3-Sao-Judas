@@ -1,5 +1,5 @@
-import Aplication.api.ApiCEP;
-import Aplication.dto.EnderecoDto;
+import Application.api.ApiCEP;
+import Application.dto.EnderecoDto;
 
 import java.io.IOException;
 
