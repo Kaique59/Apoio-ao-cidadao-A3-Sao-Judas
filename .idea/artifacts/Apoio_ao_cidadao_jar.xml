@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Apoio_ao_cidadao:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Apoio_ao_cidadao_jar</output-path>
+    <root id="archive" name="Apoio_ao_cidadao.jar">
+      <element id="module-output" name="Apoio_ao_cidadao" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
