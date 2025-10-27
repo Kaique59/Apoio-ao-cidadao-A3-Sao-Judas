@@ -115,8 +115,8 @@ Preencha os campos com as informações do seu banco local.
 
 ## Responsáveis
 
-* Gabriel Sales Garcia
 * Kaique Santos Silva
+* Gabriel Sales Garcia
 * Pedro Henrique Cordeiro
 * Daniel Dias Silva
 * Lucas Viana Ferreira
